@@ -1,0 +1,40 @@
+package Main;
+
+import java.util.Random;
+
+
+public class Coin
+{
+    // 0 == front, 1 == side
+    private int coinSide;
+
+    // Construct coin
+    public Coin()
+    {
+        coinSide = 0;
+    }
+
+    // flip the coin
+    public void flip()
+    {
+        Random flipCoin = new Random();
+        coinSide = flipCoin.nextInt(2);
+    }
+
+    // return result
+    public String getResult()
+    {
+        if(coinSide == 0)
+        {
+            return "Front side";
+        }
+        else if(coinSide == 1)
+        {
+            return "Back side";
+        }
+        else
+        {
+            return "Error : Unknown number " + coinSide;
+        }
+    }
+}
